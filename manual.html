@@ -80,8 +80,11 @@
 
         /* 僅在手機上顯示說明頁 */
         @media (min-width: 481px) {
-            body {
+            .container {
                 display: none;
+            }
+            #desktopWarning {
+                display: block;
             }
         }
     </style>
@@ -95,6 +98,11 @@
             <h2 class="text2">答對5題即可通關</h2>
         </div>
         <button type="button" onclick="redirectToPage()">我了解了!</button>
+    </div>
+
+    <!-- 非手機設備顯示提示訊息 -->
+    <div id="desktopWarning" style="display: none;">
+        <h1>請使用手機瀏覽此頁面</h1>
     </div>
 
     <script>
