@@ -1,16 +1,4 @@
-<!-- @Author: YI-SYUAN -->
-<!-- 網頁遊戲主頁 -->
-<!-- 已完成:1.跳轉、2.返回 -->
-<!-- 待完成:1.畫面設計 -->
-
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR遊戲集點</title>
-    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,11 +19,10 @@
         .container {
             max-width: 100%;
             margin: 0 auto;
-            /* padding: 20px; */
             box-sizing: border-box;
             display: flex;
             justify-content: center;
-            align-items:center;
+            align-items: center;
             min-height: 100vh;
         }
 
@@ -45,7 +32,7 @@
             top: 10px;
             left: 10px;
             width: 100px;
-            height:100px;
+            height: 100px;
             background-image: url('https://github.com/tdance555/tdance2024/blob/main/media/vendor_icons/%E5%B0%8D%E9%8C%AF%E8%BF%94%E5%9B%9E_%E5%B7%A5%E4%BD%9C%E5%8D%80%E5%9F%9F%201%20%E8%A4%87%E6%9C%AC%204.png?raw=true');
             background-size: cover;
             background-color: transparent;
@@ -55,13 +42,7 @@
         }
 
         .content {
-            /* background-color:blueviolet; */
-            /* border: black solid 10px; */
-            border-radius: 5px;
             text-align: center;
-            /* height: 700px; */
-            /* max-width: 375px; */
-            /* padding-bottom: 100px; */
             padding-top: -50px;
         }
 
@@ -104,61 +85,97 @@
             margin-bottom: 100px;
         }
 
-        @media (min-width: 320px) and (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-
-            .content {
-                font-size: 14px;
-            }
+        .custom-alert-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
         }
 
-        @media (min-width: 481px) and (max-width: 767px) {
-            .container {
-                padding: 15px;
-            }
-
-            .content {
-                font-size: 16px;
-            }
+        .custom-alert-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
         }
 
-        @media (min-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            .content {
-                font-size: 18px;
-            }
+        .custom-alert-box h2 {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-bottom: 10px;
         }
+
+        .custom-alert-box p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .custom-alert-button {
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .custom-alert-button:hover {
+            background-color: #ff3b3b;
+        }
+
     </style>
 </head>
+
 <body>
     <button class="back-button" onclick="window.history.back()"></button>
     <div class="container">
         <div class="content">
             <h1>您來到了門外小屋，這裡有三條道路</h1>
             <h2 class="h2Row2">請選擇你想行走的道路</h2>
-            <button onclick="Toroute1Page()" class="button1"></button>
-            <button onclick="Toroute2Page()" class="button2"></button>
-            <button onclick="Toroute3Page()" class="button3"></button>
+            <button onclick="showCustomAlert('A', '冒險')"
+                    class="button1"></button>
+            <button onclick="showCustomAlert('B', '啟程')"
+                    class="button2"></button>
+            <button onclick="showCustomAlert('C', '拿著工具出發')"
+                    class="button3"></button>
+        </div>
+    </div>
+
+    <div class="custom-alert-overlay" id="customAlert">
+        <div class="custom-alert-box">
+            <h2>Hey there!</h2>
+            <p id="alertMessage">Button 1 clicked!</p>
+            <button class="custom-alert-button" onclick="closeCustomAlert()">OK</button>
         </div>
     </div>
 
     <script>
-        function Toroute1Page() {
-             alert('路線 A  踏上冒險吧!');
-            window.location.href = "https://kahoot.it/challenge/?quiz-id=0944876f-e356-4d14-90d6-74ae39c7aef1&single-player=true";
+        let route = "";
+
+        function showCustomAlert(routeLetter, message) {
+            route = routeLetter;
+            document.getElementById('alertMessage').innerText = `路線 ${route} ${message}吧!`;
+            document.getElementById('customAlert').style.display = 'flex';
         }
-        function Toroute2Page() {
-             alert('路線 B 準備好啟程了嗎?');
-            window.location.href = "https://kahoot.it/challenge/?quiz-id=24d6dda9-122f-46c8-9bb6-82d0701dd18d&single-player=true";
-        }
-        function Toroute3Page() {
-             alert('路線 C 拿著你的工具出發吧!');
-            window.location.href = "https://kahoot.it/challenge/?quiz-id=939b1917-8186-4d68-9ef9-a163ec1e5e08&single-player=true";
+
+        function closeCustomAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+            const urls = {
+                "A": "https://kahoot.it/challenge/?quiz-id=0944876f-e356-4d14-90d6-74ae39c7aef1&single-player=true",
+                "B": "https://kahoot.it/challenge/?quiz-id=24d6dda9-122f-46c8-9bb6-82d0701dd18d&single-player=true",
+                "C": "https://kahoot.it/challenge/?quiz-id=939b1917-8186-4d68-9ef9-a163ec1e5e08&single-player=true"
+            };
+            window.location.href = urls[route];
         }
     </script>
 </body>
