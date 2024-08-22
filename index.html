@@ -1,20 +1,18 @@
-<!-- @Author: YI-SYUAN -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AR遊戲集點</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url('https://github.com/tdance555/tdance2024/blob/main/media/vendor_icons/WebAR_Background.png?raw=true');  /* 替換為你的背景圖片 URL */
-            background-size: 100% 100%; /* 確保圖片覆蓋整個背景 */
-            background-position: center center; /* 確保圖片居中 */
-            background-repeat: no-repeat; /* 防止圖片重覆 */
+            background-image: url('https://github.com/tdance555/tdance2024/blob/main/media/vendor_icons/WebAR_Background.png?raw=true');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
 
         .container {
@@ -25,72 +23,84 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* 確保容器至少占滿整個視口高度 */
-            /*background: rgba(255, 255, 255, 0.8); *//* 半透明白色背景 */
+            min-height: 100vh;
         }
 
         .content {
-            /*background-color: #000000;*/
-            padding: 20px;
-            border-radius: 5px;
             text-align: center;
             width: 100%;
             max-width: 500px;
             padding-top: 50px;
-            /*box-shadow: 0 4px 8px rgba(0,0,0,0.1);  輕微陰影效果 */
         }
 
-        button{
+        button {
             background-color: cadetblue;
             border: none;
             color: white;
             padding: 20px 42px;
-            text-align: center;
-            text-decoration: auto;
-            display: inline-block;
             font-size: 35px;
             border-radius: 73px;
             border: 5px solid white;
+            cursor: pointer;
         }
 
+        button:hover {
+            background-color: #5f9ea0;
+        }
+
+        /* 手機 */
         @media (min-width: 320px) and (max-width: 480px) {
             .container {
                 padding: 10px;
             }
 
-            .content {
-                font-size: 14px;
+            button {
+                font-size: 25px;
+                padding: 15px 30px;
             }
         }
 
+        /* 平板 */
         @media (min-width: 481px) and (max-width: 767px) {
             .container {
                 padding: 15px;
             }
 
-            .content {
-                font-size: 16px;
+            button {
+                font-size: 30px;
+                padding: 18px 36px;
             }
         }
 
-        @media (min-width: 768px) {
+        /* 小筆電 */
+        @media (min-width: 768px) and (max-width: 1024px) {
             .container {
                 padding: 20px;
             }
 
-            .content {
-                font-size: 18px;
+            button {
+                font-size: 35px;
+                padding: 20px 42px;
             }
         }
 
+        /* 桌機和大筆電 */
+        @media (min-width: 1025px) {
+            .container {
+                padding: 20px;
+            }
+
+            button {
+                font-size: 40px;
+                padding: 25px 50px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="content">
-            <!-- <h1>Welcome to the Responsive Page</h1> -->
-            <!-- <p>This page is designed to fit within mobile device dimensions.</p> -->
-            <button onclick="redirectToPage()" class="btn">開始旅行</button>
+            <button onclick="redirectToPage()">開始旅行</button>
         </div>
     </div>
 
