@@ -20,13 +20,17 @@
             background-position: center center;
             background-repeat: no-repeat;
             text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100vh;
+            width: 100%;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -85,6 +89,16 @@
             }
             #desktopWarning {
                 display: block;
+            }
+        }
+
+        /* 自動調整背景和文字大小 */
+        @media (max-aspect-ratio: 9/16) {
+            body {
+                background-size: contain;
+            }
+            .textContainer {
+                margin-top: 20px;
             }
         }
     </style>
