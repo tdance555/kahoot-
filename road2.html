@@ -1,9 +1,10 @@
+<!-- @Author: YI-SYUAN -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AR遊戲集點</title>
     <style>
         body {
@@ -11,7 +12,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             background-image: url('https://github.com/tdance555/tdance2024/blob/main/media/vendor_icons/%E8%88%9E%E7%B4%85.png?raw=true');
-            background-size: 100% 100%;
+            background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
         }
@@ -27,7 +28,6 @@
         }
 
         .back-button {
-            padding-top: -10px;
             position: fixed;
             top: 10px;
             left: 10px;
@@ -43,7 +43,6 @@
 
         .content {
             text-align: center;
-            padding-top: -50px;
         }
 
         .button1, .button2, .button3 {
@@ -51,7 +50,6 @@
             height: 125px;
             background-color: #ffffff;
             border: none;
-            color: white;
             padding: 20px 42px;
             text-align: center;
             display: block;
@@ -61,6 +59,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             margin: 10px auto;
+            cursor: pointer;
         }
 
         .button1 {
@@ -142,12 +141,9 @@
         <div class="content">
             <h1>您來到了門外小屋，這裡有三條道路</h1>
             <h2 class="h2Row2">請選擇你想行走的道路</h2>
-            <button onclick="showCustomAlert('A', '啟程去冒險吧 !!! ')"
-                    class="button1"></button>
-            <button onclick="showCustomAlert('B', '刺激你的五感 !!! ')"
-                    class="button2"></button>
-            <button onclick="showCustomAlert('C', '拿著工具出發 !!! ')"
-                    class="button3"></button>
+            <button onclick="showCustomAlert('A', '啟程去冒險吧 !!! ')" class="button1"></button>
+            <button onclick="showCustomAlert('B', '刺激你的五感 !!! ')" class="button2"></button>
+            <button onclick="showCustomAlert('C', '拿著工具出發 !!! ')" class="button3"></button>
         </div>
     </div>
 
