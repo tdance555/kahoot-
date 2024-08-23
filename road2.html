@@ -46,33 +46,35 @@
         }
 
         .button1, .button2, .button3 {
-        width: 125px;
-        height: 125px;
-        background-color: #ffffff;
-        border: none;
-        text-align: center;
-        display: block;
-        font-size: 51px;
-        border-radius: 20px;
-        border: 5px solid rgba(96, 55, 62, 0.3);
-        margin: 10px auto;
-        cursor: pointer;
-        line-height: 125px;
+            width: 125px;
+            height: 125px;
+            background-color: #ffffff;
+            border: none;
+            text-align: center;
+            display: flex; /* 使用 Flexbox 進行布局 */
+            align-items: center; /* 垂直置中 */
+            justify-content: center; /* 水平置中 */
+            font-size: 51px;
+            border-radius: 20px;
+            border: 5px solid rgba(96, 55, 62, 0.3);
+            margin: 10px auto;
+            cursor: pointer;
+            /* 移除 line-height，因為 Flexbox 已處理對齊 */
         }
 
         .button1 {
-            background-color: #B47157; /* A按鈕背景顏色 */
-            color: black; /* A按鈕文字顏色 */
+            background-color: #FFD700; /* A 按鈕背景顏色 */
+            color: black; /* A 按鈕文字顏色 */
         }
 
         .button2 {
-            background-color: #D9AB42; /* B按鈕背景顏色 */
-            color: white; /* B按鈕文字顏色 */
+            background-color: #FF4500; /* B 按鈕背景顏色 */
+            color: white; /* B 按鈕文字顏色 */
         }
 
         .button3 {
-            background-color: #91AD70; /* C按鈕背景顏色 */
-            color: white; /* C按鈕文字顏色 */
+            background-color: #1E90FF; /* C 按鈕背景顏色 */
+            color: white; /* C 按鈕文字顏色 */
         }
 
         h1 {
@@ -132,7 +134,6 @@
         .custom-alert-button:hover {
             background-color: #ff3b3b;
         }
-
     </style>
 </head>
 
@@ -151,7 +152,7 @@
     <div class="custom-alert-overlay" id="customAlert">
         <div class="custom-alert-box">
             <h2>準備迎接挑戰</h2>
-            <p id="alertMessage">Button 1 clicked!</p>
+            <p id="alertMessage">Button clicked!</p>
             <button class="custom-alert-button" onclick="closeCustomAlert()">OK</button>
         </div>
     </div>
