@@ -50,28 +50,29 @@
             height: 125px;
             background-color: #ffffff;
             border: none;
-            padding: 20px 42px;
             text-align: center;
             display: block;
             font-size: 35px;
             border-radius: 15px;
             border: 5px solid #EAD73B;
-            background-size: contain;
-            background-repeat: no-repeat;
             margin: 10px auto;
             cursor: pointer;
+            line-height: 125px; /* 讓文字在按鈕中垂直居中 */
         }
 
         .button1 {
-            background-image: url('https://github.com/tdance555/tdance2024/blob/main/media/vendor_icons/button_1.png?raw=true');
+            background-color: #FFD700; /* A按鈕背景顏色 */
+            color: black; /* A按鈕文字顏色 */
         }
 
         .button2 {
-            background-image: url('https://github.com/tdance555/tdance2024/blob/main/media/vendor_icons/button_2.png?raw=true');
+            background-color: #FF4500; /* B按鈕背景顏色 */
+            color: white; /* B按鈕文字顏色 */
         }
 
         .button3 {
-            background-image: url('https://github.com/tdance555/tdance2024/blob/main/media/vendor_icons/button_3.png?raw=true');
+            background-color: #1E90FF; /* C按鈕背景顏色 */
+            color: white; /* C按鈕文字顏色 */
         }
 
         h1 {
@@ -141,9 +142,9 @@
         <div class="content">
             <h1>您來到了門外小屋，這裡有三條道路</h1>
             <h2 class="h2Row2">請選擇你想行走的道路</h2>
-            <button onclick="showCustomAlert('A', '啟程去冒險吧 !!! ')" class="button1"></button>
-            <button onclick="showCustomAlert('B', '刺激你的五感 !!! ')" class="button2"></button>
-            <button onclick="showCustomAlert('C', '拿著工具出發 !!! ')" class="button3"></button>
+            <button onclick="showCustomAlert('A', '啟程去冒險吧 !!! ')" class="button1">A</button>
+            <button onclick="showCustomAlert('B', '刺激你的五感 !!! ')" class="button2">B</button>
+            <button onclick="showCustomAlert('C', '拿著工具出發 !!! ')" class="button3">C</button>
         </div>
     </div>
 
